@@ -33,6 +33,16 @@
     background: black;
 }
 
+.intro__layer--bg-front {
+    z-index: 2;
+    background: black;
+}
+
+.intro__layer--bg-back {
+    z-index: 1;
+    background: black;
+}
+
 .intro__layer--fg {
     z-index: 2;
 }
@@ -61,10 +71,15 @@
 }
 
 .intro__line {
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     height: 4px;
     background-color: black;
+}
+
+.intro__mountain {
+    z-index: 2;
+    background-color: red;
 }
 
 

@@ -1,11 +1,24 @@
+import { useViewport } from '../../utils';
 import './intro.css';
 
+const mountainRatio = 1080 / 15;
+
 function Intro() {
+  const viewportSize = useViewport();
+  const mountainCount = Math.ceil(viewportSize.width / mountainRatio);
+  const mountains = [...Array(mountainCount).keys()];
+
   return (
     <div className="intro">
       <div className="intro__layer intro__layer--bg">
-        <div className="intro__bg-fill">
-          <div className="intro__line"></div>
+        <div className="intro__layer intro__layer--bg-front">
+
+        </div>
+
+        <div className="intro__layer intro__layer--bg-back">
+          <div className="intro__bg-fill">
+            <div className="intro__line"></div>
+          </div>
         </div>
       </div>
 
