@@ -112,6 +112,14 @@
     height: 100%;
 }
 
+.intro__mountain--top {
+    transform-origin: top;
+}
+
+.intro__mountain--bottom {
+    transform-origin: bottom;
+}
+
 
 .intro__title {
     color: black;

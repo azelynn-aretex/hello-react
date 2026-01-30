@@ -1,7 +1,28 @@
+import { motion, stagger } from 'motion/react';
 import { useViewport } from '../../utils';
 import './intro.css';
 
 const mountainWidth = 1080 / 15;
+
+const mountainContainerVariant = {
+  hidden: {},
+  show: { transition: {
+    staggerChildren: 0.03,
+  }}
+};
+
+const mountainContainerInverseVariant = {
+  hidden: {},
+  show: { transition: {
+    staggerChildren: 0.03,
+    staggerDirection: -1
+  }}
+};
+
+const mountainVariant = {
+  hidden: { scaleY: 0 },
+  show: { scaleY: 1 },
+};
 
 function getMountainContainerStyle() {
   return {
@@ -20,44 +41,48 @@ function Intro() {
       <div className="intro__layer intro__layer--bg">
         <div className="intro__layer intro__layer--bg-front">
           <div className="intro__mountains">
-            <div className="intro__mountains-container intro__mountains-container--top">
+            <motion.div
+              className="intro__mountains-container intro__mountains-container--top"
+              variants={mountainContainerVariant}
+              initial="hidden"
+              animate="show"
+            >
               {mountains.map(idx => (
                 <div
                   key={idx}
                   className="intro__mountain-container"
                   style={getMountainContainerStyle()}
                 >
-                  <div
-                    key={idx}
-                    className="intro__mountain"
-                    style={{
-                      transformOrigin: "top",
-                      // animation: `expand-y 1s var(--out-quint) ${idx * 0.05 + 1}s both`
-                    }}
+                  <motion.div
+                    variants={mountainVariant}
+                    className="intro__mountain intro__mountain--top"
                   >
-                  </div>
+                  </motion.div>
                 </div>
               ))}
-            </div>
+            </motion.div>
 
             <div className="intro__mountains-container intro__mountains-container--bottom">
-              {mountains.map(idx => (
-                <div
-                  key={idx}
-                  className="intro__mountain-container"
-                  style={getMountainContainerStyle()}
-                >
+              <motion.div
+                className="intro__mountains-container intro__mountains-container--bottom"
+                variants={mountainContainerInverseVariant}
+                initial="hidden"
+                animate="show"
+              >
+                {mountains.map(idx => (
                   <div
                     key={idx}
-                    className="intro__mountain"
-                    style={{
-                      transformOrigin: "bottom",
-                      // animation: `expand-y 1s var(--out-quint) ${(mountains.length - 1 - idx) * 0.05 + 2}s both`
-                    }}
+                    className="intro__mountain-container"
+                    style={getMountainContainerStyle()}
                   >
+                    <motion.div
+                      variants={mountainVariant}
+                      className="intro__mountain intro__mountain--bottom"
+                    >
+                    </motion.div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </motion.div>
             </div>
           </div>
         </div>
