@@ -37,7 +37,26 @@ function Intro() {
             </div>
 
             <div className="intro__mountains-container intro__mountains-container--bottom">
-
+              {mountains.map(idx => (
+                <div
+                  key={idx}
+                  className="intro__mountain-container"
+                  style={{
+                    width: mountainWidth,
+                    height: Math.random() * 100 + 50
+                  }}
+                >
+                  <div
+                    key={idx}
+                    className="intro__mountain"
+                    style={{
+                      transformOrigin: "top",
+                      animation: `expand-y 1s var(--out-quint) ${idx * 0.05 + 1}s both`
+                    }}
+                  >
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
