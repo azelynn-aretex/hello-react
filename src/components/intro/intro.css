@@ -35,7 +35,6 @@
 
 .intro__layer--bg-front {
     z-index: 2;
-    background: black;
 }
 
 .intro__layer--bg-back {
