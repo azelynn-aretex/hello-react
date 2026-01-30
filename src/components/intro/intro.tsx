@@ -32,7 +32,7 @@ function Intro() {
                     className="intro__mountain"
                     style={{
                       transformOrigin: "top",
-                      animation: `expand-y 1s var(--out-quint) ${idx * 0.05 + 1}s both`
+                      // animation: `expand-y 1s var(--out-quint) ${idx * 0.05 + 1}s both`
                     }}
                   >
                   </div>
@@ -52,7 +52,7 @@ function Intro() {
                     className="intro__mountain"
                     style={{
                       transformOrigin: "bottom",
-                      animation: `expand-y 1s var(--out-quint) ${(mountains.length - 1 - idx) * 0.05 + 2}s both`
+                      // animation: `expand-y 1s var(--out-quint) ${(mountains.length - 1 - idx) * 0.05 + 2}s both`
                     }}
                   >
                   </div>
