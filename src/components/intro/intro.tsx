@@ -1,4 +1,4 @@
-import { motion, stagger } from 'motion/react';
+import { motion } from 'motion/react';
 import { useViewport } from '../../utils';
 import './intro.css';
 
