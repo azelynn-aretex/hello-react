@@ -3,6 +3,13 @@ import './intro.css';
 
 const mountainWidth = 1080 / 15;
 
+function getMountainContainerStyle() {
+  return {
+    width: mountainWidth,
+    height: Math.random() * 100 + 50
+  };
+}
+
 function Intro() {
   const viewportSize = useViewport();
   const mountainCount = Math.ceil(viewportSize.width / mountainWidth);
@@ -18,10 +25,7 @@ function Intro() {
                 <div
                   key={idx}
                   className="intro__mountain-container"
-                  style={{
-                    width: mountainWidth,
-                    height: Math.random() * 100 + 50
-                  }}
+                  style={getMountainContainerStyle()}
                 >
                   <div
                     key={idx}
@@ -41,17 +45,14 @@ function Intro() {
                 <div
                   key={idx}
                   className="intro__mountain-container"
-                  style={{
-                    width: mountainWidth,
-                    height: Math.random() * 100 + 50
-                  }}
+                  style={getMountainContainerStyle()}
                 >
                   <div
                     key={idx}
                     className="intro__mountain"
                     style={{
-                      transformOrigin: "top",
-                      animation: `expand-y 1s var(--out-quint) ${idx * 0.05 + 1}s both`
+                      transformOrigin: "bottom",
+                      animation: `expand-y 1s var(--out-quint) ${(mountains.length - 1 - idx) * 0.05 + 2}s both`
                     }}
                   >
                   </div>

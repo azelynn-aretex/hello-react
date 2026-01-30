@@ -95,11 +95,11 @@
     height: 100%;
 }
 
-.intro__mountains-container-top {
+.intro__mountains-container--top {
     align-items: start;
 }
 
-.intro__mountains-container-bottom {
+.intro__mountains-container--bottom {
     align-items: end;
 }
 
